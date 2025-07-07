@@ -3,8 +3,8 @@
 // 1. addTwoNumbers(a, b)
 // Returns the sum of two numbers.
 function addTwoNumbers(a, b) {
-    // Your code here
-    return 0; // Placeholder
+   
+    return a + b; 
 }
 addTwoNumbers.testCases = [
     { input: [1, 2], expected: 3, description: 'should return 3 for 1 and 2' },
@@ -15,8 +15,12 @@ addTwoNumbers.testCases = [
 // 2. reverseString(str)
 // Reverses a given string.
 function reverseString(str) {
-    // Your code here
-    return ''; // Placeholder
+    let splitString = str.split("");
+    let reverseArray = splitString.reverse();
+    let joinArray = reverseArray.join("");
+
+    return joinArray;
+
 }
 reverseString.testCases = [
     { input: ['hello'], expected: 'olleh', description: 'should reverse "hello" to "olleh"' },
@@ -28,8 +32,8 @@ reverseString.testCases = [
 // 3. isEven(num)
 // Checks if a number is even.
 function isEven(num) {
-    // Your code here
-    return false; // Placeholder
+
+    return num % 2 == 0;
 }
 isEven.testCases = [
     { input: [2], expected: true, description: 'should return true for 2' },
@@ -41,8 +45,10 @@ isEven.testCases = [
 // 4. findMax(arr)
 // Finds the maximum number in an array.
 function findMax(arr) {
-    // Your code here
-    return 0; // Placeholder
+let max = Math.max(...arr);
+
+console.log(max);
+  return max;
 }
 findMax.testCases = [
     { input: [[1, 2, 3]], expected: 3, description: 'should return 3 for [1, 2, 3]' },
@@ -54,8 +60,15 @@ findMax.testCases = [
 // 5. countVowels(str)
 // Counts the number of vowels in a string. (a, e, i, o, u, case-insensitive)
 function countVowels(str) {
-    // Your code here
-    return 0; // Placeholder
+     let vowels = "aeiouAEIOU";
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+      count++;
+    }
+  }
+
+  return count;
 }
 countVowels.testCases = [
     { input: ['hello'], expected: 2, description: 'should return 2 for "hello"' },
@@ -67,8 +80,8 @@ countVowels.testCases = [
 // 6. celsiusToFahrenheit(celsius)
 // Converts Celsius to Fahrenheit. Formula: (Celsius * 9/5) + 32
 function celsiusToFahrenheit(celsius) {
-    // Your code here
-    return 0; // Placeholder
+
+    return ((celsius * 9.0 / 5.0) + 32.0);
 }
 celsiusToFahrenheit.testCases = [
     { input: [0], expected: 32, description: 'should return 32 for 0 Celsius' },
@@ -79,8 +92,8 @@ celsiusToFahrenheit.testCases = [
 // 7. getAreaOfRectangle(length, width)
 // Calculates the area of a rectangle.
 function getAreaOfRectangle(length, width) {
-    // Your code here
-    return 0; // Placeholder
+    
+    return length * width;
 }
 getAreaOfRectangle.testCases = [
     { input: [5, 10], expected: 50, description: 'should return 50 for length 5 and width 10' },
@@ -91,8 +104,8 @@ getAreaOfRectangle.testCases = [
 // 8. removeDuplicates(arr)
 // Removes duplicate elements from an array.
 function removeDuplicates(arr) {
-    // Your code here
-    return []; // Placeholder
+    
+   return [...new Set(arr)];
 }
 removeDuplicates.testCases = [
     { input: [[1, 2, 2, 3, 1]], expected: [1, 2, 3], description: 'should remove duplicates from [1, 2, 2, 3, 1]' },
@@ -104,22 +117,26 @@ removeDuplicates.testCases = [
 // 9. capitalizeFirstLetter(str)
 // Capitalizes the first letter of a string.
 function capitalizeFirstLetter(str) {
-    // Your code here
-    return ''; // Placeholder
+    
+    return str.charAt(0).toUpperCase() + str.slice(1)
 }
 capitalizeFirstLetter.testCases = [
     { input: ['hello'], expected: 'Hello', description: 'should capitalize "hello" to "Hello"' },
     { input: ['world'], expected: 'World', description: 'should capitalize "world" to "World"' },
     { input: ['a'], expected: 'A', description: 'should capitalize "a" to "A"' },
     { input: ['',], expected: '', description: 'should return empty string for empty string' },
-    { input: ['123test'], expected: '123test', description: 'should not change if first char is not a letter' },
+    { input: ['123test'], expected: '123test', description: 'should not change if first char is not a letter' },     
 ];
 
 // 10. sumArray(arr)
 // Sums all numbers in an array.
 function sumArray(arr) {
-    // Your code here
-    return 0; // Placeholder
+    var total = 0;
+    arr.forEach(function(element){
+        total += element;
+    })
+
+    return total;
 }
 sumArray.testCases = [
     { input: [[1, 2, 3]], expected: 6, description: 'should return 6 for [1, 2, 3]' },
@@ -131,8 +148,8 @@ sumArray.testCases = [
 // 11. isPalindrome(str)
 // Checks if a string is a palindrome (reads the same forwards and backwards, case-insensitive, ignoring non-alphanumeric characters).
 function isPalindrome(str) {
-    // Your code here
-    return false; // Placeholder
+    
+    return str === str.split('').reverse().join('');
 }
 isPalindrome.testCases = [
     { input: ['madam'], expected: true, description: 'should return true for "madam"' },
@@ -157,9 +174,12 @@ fizzBuzz.testCases = [
 
 // 13. factorial(num)
 // Calculates the factorial of a number.
-function factorial(num) {
-    // Your code here
-    return 0; // Placeholder
+function factorial(n) {
+    let result = 1;
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
 }
 factorial.testCases = [
     { input: [0], expected: 1, description: 'should return 1 for 0' },
@@ -171,8 +191,8 @@ factorial.testCases = [
 // 14. findLongestWord(str)
 // Finds the longest word in a sentence. If there are multiple words with the same longest length, return the first one.
 function findLongestWord(str) {
-    // Your code here
-    return ''; // Placeholder
+    str = str.split("")
+    return str.sort((a, b) => b.length - a.length)[0]
 }
 findLongestWord.testCases = [
     { input: ['The quick brown fox jumped over the lazy dog'], expected: 'jumped', description: 'should return "jumped"' },
@@ -184,8 +204,10 @@ findLongestWord.testCases = [
 // 15. findMin(arr)
 // Finds the minimum number in an array.
 function findMin(arr) {
-    // Your code here
-    return 0; // Placeholder
+    let min = Math.min(...arr);
+
+console.log(min);
+  return min;
 }
 findMin.testCases = [
     { input: [[1, 2, 3]], expected: 1, description: 'should return 1 for [1, 2, 3]' },
