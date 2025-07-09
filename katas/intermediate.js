@@ -3,8 +3,11 @@
 // 1. chunkArray(arr, size)
 // Divides an array into smaller arrays of a specified size.
 function chunkArray(arr, size) {
-    // Your code here
-    return []; // Placeholder
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+        result.push(arr.slice(i, i + size));
+    }
+    return result;
 }
 chunkArray.testCases = [
     { input: [[1, 2, 3, 4, 5], 2], expected: [[1, 2], [3, 4], [5]], description: 'should chunk [1,2,3,4,5] into [[1,2],[3,4],[5]] with size 2' },
@@ -79,4 +82,8 @@ module.exports = {
     titleCase,
     findMissingNumber,
     isValidParentheses,
-};
+}
+
+
+
+

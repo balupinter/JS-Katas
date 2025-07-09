@@ -219,7 +219,7 @@ findMin.testCases = [
 // 16. averageArray(arr)
 // Calculates the average of numbers in an array.
 function averageArray(arr) {
-    // Your code here
+    
     return 0; // Placeholder
 }
 averageArray.testCases = [
@@ -372,9 +372,10 @@ endsWith.testCases = [
 // 28. repeatString(str, num)
 // Repeats a string a given number of times.
 function repeatString(str, num) {
-    // Your code here
-    return ''; // Placeholder
+    if (num < 0) return '';
+    return str.repeat(num);
 }
+
 repeatString.testCases = [
     { input: ['abc', 3], expected: 'abcabcabc', description: 'should repeat string 3 times' },
     { input: ['*', 5], expected: '*****', description: 'should repeat character 5 times' },
@@ -402,7 +403,7 @@ function roundNumber(num) {
     return 0; // Placeholder
 }
 roundNumber.testCases = [
-    { input: [3.14], expected: 3, description: 'should round down 3.14 to 3' },
+    { input: [3.14], expected: 3, description: 'should round down 3.14 to 3'}, 
     { input: [3.7], expected: 4, description: 'should round up 3.7 to 4' },
     { input: [3.5], expected: 4, description: 'should round 3.5 to 4' },
     { input: [-3.7], expected: -4, description: 'should round -3.7 to -4' },
